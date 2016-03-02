@@ -41,10 +41,10 @@ cuantosDebajoPromedio a b c d = length $ filter (< avg) cuatro
     Escriba una funcion en Haskell llamada negativos, esta funcion revisa un
     arreglo de enteros y cuenta cuantos numeros negativos existe en una lista.
 -}
-negativos::[Int] ->Int
+negativos:: [Int] ->Int
 negativos list = length $ filter (< 0) list
 
--- Problema5.
+-- Problema 5.
 {-
     Escriba una funcion en Haskell llamada fib que define los numeros
     de Fibonacci mediante la regla:
@@ -55,3 +55,37 @@ fib n
     | n==0     = 0
     | n==1     = 1
     | n>1      = fib (n - 2) + fib (n - 1)
+
+-- Problema 6.
+{-
+    Escribir una funcion en Haskell llamada absoluto (Valor absoluto)
+    que devuelve el valor absoluto de un entero.
+-}
+absoluto:: Integer ->Integer
+absoluto n 
+        | n >= 0 = n
+        | n < 0 = - n
+
+-- Problema 7.
+{-
+    Escriba una funcion llamada intercambio de modo que
+    flip(curry f ) = curry( f:intercambio) Para todo 
+    f :: (alfa; beta) -> y
+-}
+-- intercambio:: flip(currificacion) -> currificacion (flip)
+intercambio:: ((a,b) -> y)-> b -> a -> y
+intercambio f x y = f(y,x)
+
+-- Test con resta 
+resta:: (Integer,Integer) -> Integer
+resta (x,y) = x - y
+
+resta':: Integer -> Integer -> Integer
+resta' = intercambio resta
+
+-- Problema 8.
+{-
+    Escriba una funcion en haskell llamada secuenciaMaxLarga, esta funcion
+    revisa un arreglo de enteros y encuentra la secuencia consecutiva mas larga.
+-}
+-- secuenciaMaxLarga::[Int] ->Int
