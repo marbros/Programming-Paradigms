@@ -3,13 +3,14 @@
     Escriba una funcion en haskell llamada todosIguales que verifique que
     los cuatros enteros de entrada son todos iguales.
 -}
-todosIgualesV1:: Int ->Int ->Int ->Int ->Bool
+todosIguales:: Int ->Int ->Int ->Int ->Bool
+todosIguales a b c d = (a==b) && (b==c) && (c==d)
+
+todosIgualesV2:: Int ->Int ->Int ->Int ->Bool
 todosIgualesV1   a     b     c     d
     | (a==b) && (b==c) && (c==d) = True
     | otherwise                  = False
 
-todosIgualesV2:: Int ->Int ->Int ->Int ->Bool
-todosIgualesV2 a b c d = (a==b) && (b==c) && (c==d)
 
 -- Problema 2.
 {-
@@ -69,19 +70,19 @@ absoluto n
 -- Problema 7.
 {-
     Escriba una funcion llamada intercambio de modo que
-    flip(curry f ) = curry( f:intercambio) Para todo 
+    flip(curry f ) = curry( f.intercambio) Para todo 
     f :: (alfa; beta) -> y
 -}
 -- intercambio:: flip(currificacion) -> currificacion (flip)
-intercambio:: ((a,b) -> y)-> b -> a -> y
-intercambio f x y = f(y,x)
+intercambio:: (a,b) -> (b,a)
+intercambio (x,y) = (y,x)
 
 -- Test con resta 
 resta:: (Integer,Integer) -> Integer
 resta (x,y) = x - y
 
-resta':: Integer -> Integer -> Integer
-resta' = intercambio resta
+-- resta':: Integer -> Integer -> Integer
+-- resta' = intercambio resta
 
 -- Problema 8.
 {-
