@@ -88,4 +88,10 @@ resta' = intercambio resta
     Escriba una funcion en haskell llamada secuenciaMaxLarga, esta funcion
     revisa un arreglo de enteros y encuentra la secuencia consecutiva mas larga.
 -}
--- secuenciaMaxLarga::[Int] ->Int
+secuenciaMaxLarga::[Int] ->Int
+secuenciaMaxLarga []     = 0
+secuenciaMaxLarga (x:xs) = secuencia 1 1 x xs where
+    secuencia maxLarga actual _ [] = max maxLarga actual
+    secuencia maxLarga actual prev (x:xs)
+        | x == prev = secuencia maxLarga (actual + 1) prev xs
+        | otherwise = secuencia (max maxLarga actual) 1 x xs
