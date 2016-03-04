@@ -7,7 +7,7 @@ todosIguales:: Int ->Int ->Int ->Int ->Bool
 todosIguales a b c d = (a==b) && (b==c) && (c==d)
 
 todosIgualesV2:: Int ->Int ->Int ->Int ->Bool
-todosIgualesV1   a     b     c     d
+todosIgualesV2   a     b     c     d
     | (a==b) && (b==c) && (c==d) = True
     | otherwise                  = False
 
@@ -80,9 +80,6 @@ intercambio (x,y) = (y,x)
 -- Test con resta 
 resta:: (Integer,Integer) -> Integer
 resta (x,y) = x - y
-
--- resta':: Integer -> Integer -> Integer
--- resta' = intercambio resta
 
 -- Problema 8.
 {-
