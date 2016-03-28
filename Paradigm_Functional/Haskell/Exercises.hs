@@ -63,3 +63,11 @@ twon :: Int -> Int
 twon 0 = 1
 twon 1 = 2
 twon n = 2 * (twon (n - 1))
+
+--Exercise 5.11
+
+matches :: Int -> [Int] -> [Int]
+matches i lst = [n | n <- lst, n == 1]
+
+elemt :: Int -> [Int] -> Bool
+elemt i lst = length (matches i lst) > 0
