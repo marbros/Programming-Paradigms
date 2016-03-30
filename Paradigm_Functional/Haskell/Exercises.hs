@@ -71,3 +71,17 @@ matches i lst = [n | n <- lst, n == 1]
 
 elemt :: Int -> [Int] -> Bool
 elemt i lst = length (matches i lst) > 0
+
+--Exercise 5.21
+
+onThreeLines :: String -> String -> String -> String
+onThreeLines a b c = a++"\n"++b++"\n"++c
+
+
+--Exercise 5.22
+
+onSeparateLines :: [String] -> String
+onSeparateLines [] = ""
+onSeparateLines lines
+  | length lines == 1  = head lines
+  | otherwise          = (head lines) ++ "\n" ++ (onSeparateLines (tail lines))
