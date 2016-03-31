@@ -25,19 +25,16 @@ rangeProduct a b
   | a == b     = a
   | otherwise  = 0
 
-
 --Exercise 4.6
 
 fac :: Int -> Int
 fac n = rangeProduct 1 n
-
 
 --Exercise 4.7
 
 mult :: Int -> Int -> Int
 mult 0 y = 0
 mult x y = mult (x - 1) y + y
-
 
 --Exercise 4.8
 
@@ -49,13 +46,11 @@ findroot n s
 intsqrt :: Int -> Int
 intsqrt n = findroot n 1
 
-
 --Exercise 4.13
 
 hcf :: Int -> Int -> Int
 hcf x 0 = x
 hcf x y = hcf y (rem x y)
-
 
 --Exercise 4.14
 
@@ -77,7 +72,6 @@ elemt i lst = length (matches i lst) > 0
 onThreeLines :: String -> String -> String -> String
 onThreeLines a b c = a++"\n"++b++"\n"++c
 
-
 --Exercise 5.22
 
 onSeparateLines :: [String] -> String
@@ -85,3 +79,11 @@ onSeparateLines [] = ""
 onSeparateLines lines
   | length lines == 1  = head lines
   | otherwise          = (head lines) ++ "\n" ++ (onSeparateLines (tail lines))
+
+  --Exercise 5.23
+
+duplicate :: String -> Int -> String
+duplicate s 1 = s
+duplicate s n
+  | n <= 0     = ""
+  | otherwise  = s ++ (duplicate s (n-1))
