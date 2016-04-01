@@ -1,12 +1,12 @@
 -- Fibonacci.
 
 fibonacci :: (Int,Int) -> (Int,Int)
-fibnacci (x,y) = (y,x+y)
+fibonacci (x,y) = (y, x + y)
 
-fibPair :: Int -> (Int,Int)
-fibPair n
+fiboPair :: Int -> (Int,Int)
+fiboPair n
     | n == 0         = (0,1)
-    | otherwise      = fibonacci (fibPair (n - 1))
+    | otherwise      = fibonacci (fiboPair (n - 1))
 
 optiParams :: Int -> Int
-optiParams = fst . fibPair
+optiParams = fst . fiboPair
