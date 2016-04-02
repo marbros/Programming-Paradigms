@@ -87,3 +87,14 @@ duplicate s 1 = s
 duplicate s n
   | n <= 0     = ""
   | otherwise  = s ++ (duplicate s (n-1))
+
+-- Function Trim
+
+whitespace :: String
+whitespace = ['\n', '\t', ' ']
+
+trim :: String -> String
+trim [] = []
+trim (x:xs) 
+    | elem x whitespace    = trim xs
+    | otherwise            = (x:xs)
