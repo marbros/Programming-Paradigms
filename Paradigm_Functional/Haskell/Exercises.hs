@@ -98,3 +98,11 @@ trim [] = []
 trim (x:xs) 
     | elem x whitespace    = trim xs
     | otherwise            = (x:xs)
+
+-- Get word of a string.
+
+getWord :: String -> String
+getWord [] = [] 
+getWord (x:xs) 
+    | elem x whitespace  = []
+    | otherwise          = x : getWord xs
