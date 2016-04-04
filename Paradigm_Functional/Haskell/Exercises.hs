@@ -108,6 +108,12 @@ getWord (x:xs)
     | otherwise          = x : getWord xs
 
 
+-- joining two list
+(++) :: [a] -> [a] -> [a]
+
+[]     ++ ys = ys
+(x:xs) ++ ys = x:(xs++ys)
+
 type Word = String
 
 -- Splitting a string into words.
