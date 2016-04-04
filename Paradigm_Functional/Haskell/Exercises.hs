@@ -106,3 +106,15 @@ getWord [] = []
 getWord (x:xs) 
     | elem x whitespace  = []
     | otherwise          = x : getWord xs
+
+
+type Word = String
+
+-- Splitting a string into words.
+
+splitWords :: String -> [Word]
+splitWords st = split (dropSpace st)
+
+split :: String -> [Word]
+split [] = []
+split st = (getWord st) : split (dropSpace (dropWord st))
