@@ -13,7 +13,13 @@ noCome c m = m >= c
 instance Grafo river where
 
 suc(R m c 1) = [R m' c' 0 | (mb, cb) <- pairs
-                             let m' = m -mb, m' >= 0,
-                             let c' = c -cb, c' >= 0,
+                             let m' = m - mb, m' >= 0,
+                             let c' = c - cb, c' >= 0,
+                             noCome c' m',
+                             noCome (3 - c') (3 - m')]
+
+suc(R m c 0) = [R m' c' 1 | (mb, cb) <- pairs
+                             let m' = m + mb, m' <= 3,
+                             let c' = c + cb, c' <= 3,
                              noCome c' m',
                              noCome (3 - c') (3 - m')]
