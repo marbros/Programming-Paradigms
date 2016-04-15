@@ -23,3 +23,5 @@ suc(R m c 0) = [R m' c' 1 | (mb, cb) <- pairs
                              let c' = c + cb, c' <= 3,
                              noCome c' m',
                              noCome (3 - c') (3 - m')]
+
+river = path(R 3 3 3 1) ( (==) (R 0 0 0)) []
