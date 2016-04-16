@@ -124,3 +124,8 @@ splitWords st = split (dropSpace st)
 split :: String -> [Word]
 split [] = []
 split st = (getWord st) : split (dropSpace (dropWord st))
+
+unzip :: [(a,b)] -> ([a],[b])
+
+unzip [] = ([],[])
+unzip ((x,y): ps) = (x:xs,y:ys) where (xs,ys) = unzip ps
