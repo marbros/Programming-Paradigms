@@ -17,3 +17,6 @@ foldl f e (x:xs) = foldl f (f e x) xs
 
 --La funcion scanl
 inits = foldr f [[]] where f x xss = [] : map (x:) xss
+
+scanl:: ( a -> b -> b ) -> b -> [ a ] -> [ a ]
+scanl f e = map (foldl f e ) . inits
