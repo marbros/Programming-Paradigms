@@ -14,3 +14,6 @@ foldr f e (x:xs) = f x (foldr f e xs)
 foldl:: ( b -> a -> b ) -> b -> [ a ] -> b
 foldl f e = e
 foldl f e (x:xs) = foldl f (f e x) xs
+
+--La funcion scanl
+inits = foldr f [[]] where f x xss = [] : map (x:) xss
