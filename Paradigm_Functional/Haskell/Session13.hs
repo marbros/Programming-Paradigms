@@ -24,3 +24,7 @@ scanl f e = map (foldl f e ) . inits
 --Función tails
 tails [] = [ [ ] ]
 tails (x:xs) = x:xs : tails xs
+
+scanr f a [] = [a]
+scanr f a (x:xs) = f x (head ys):ys
+            where ys = scanr f a xs
