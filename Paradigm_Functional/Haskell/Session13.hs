@@ -20,3 +20,7 @@ inits = foldr f [[]] where f x xss = [] : map (x:) xss
 
 scanl:: ( a -> b -> b ) -> b -> [ a ] -> [ a ]
 scanl f e = map (foldl f e ) . inits
+
+--Función tails
+tails [] = [ [ ] ]
+tails (x:xs) = x:xs : tails xs
