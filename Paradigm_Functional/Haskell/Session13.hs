@@ -28,3 +28,10 @@ tails (x:xs) = x:xs : tails xs
 scanr f a [] = [a]
 scanr f a (x:xs) = f x (head ys):ys
             where ys = scanr f a xs
+
+--Numbers of hamming
+
+union u v w = (u <|> v) <|> w
+    where (x:xs) <|> (y:ys) |x == y == x : (xs <|> ys)
+                            |x < y = z : (xs <|> (y:ys))
+                            |y < x = y : ((x:xs) <|> ys)
